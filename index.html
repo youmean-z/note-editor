@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>note-editor</title>
+    <style>
+        :root {
+            font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        #editor {
+            overflow-y: auto;
+            height: 100vh;
+        }
+
+        @media print {
+            #editor {
+                height: 100%;
+            }
+        }
+
+        #tex {
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="./src/style/style.css">
+    <link rel="stylesheet" type="text/css" href="./src/style/code.css">
+</head>
+</head>
+
+<body>
+    <div id="app">
+        <div id="editor"></div>
+    </div>
+    <script type="module">
+        import view from './dist/index.js'
+        view(document.getElementById('editor'), res => {
+            console.log(res)
+        }, url => {
+            console.log(url)
+            window.open(url)
+        }, (file) => new Promise(resolve => {
+            console.log(file)
+            setTimeout(() => {
+                resolve('/it/u=446981511,947966320&fm=253&fmt=auto&app=120&f=JPEG?w=750&h=500')
+            }, 2000)
+        }), {
+            imgUrl: 'https://img2.baidu.com'
+        })
+    </script>
+</body>
+
+</html>
