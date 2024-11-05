@@ -9,7 +9,7 @@ import { LanguageFn } from 'highlight.js';
  * @param upload
  * @param props
  */
-declare const _default: (el: HTMLElement, store: (res: object) => void, goUrl: (url: string) => void, upload: (file: File) => Promise<string>, props?: {
+declare const editorView: (el: HTMLElement, store: (res: object) => void, goUrl: (url: string) => void, upload: (file: File) => Promise<string>, props?: {
     placeholder?: string;
     imgUrl?: string;
     languages?: {
@@ -19,4 +19,4 @@ declare const _default: (el: HTMLElement, store: (res: object) => void, goUrl: (
     }[];
 }) => EditorView;
 
-export { _default as default };
+export { editorView };
