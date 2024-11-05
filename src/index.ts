@@ -18,7 +18,7 @@ import { loading } from './plugins/loading'
  * @param upload
  * @param props
  */
-export default (el: HTMLElement, store: (res: object) => void, goUrl: (url: string) => void, upload: (file: File) => Promise<string>, props?: { placeholder?: string, imgUrl?: string, languages?: { name: string, language: LanguageFn, simple?: string[] }[] }) => {
+export const editorView = (el: HTMLElement, store: (res: object) => void, goUrl: (url: string) => void, upload: (file: File) => Promise<string>, props?: { placeholder?: string, imgUrl?: string, languages?: { name: string, language: LanguageFn, simple?: string[] }[] }) => {
     if (props && props.placeholder) setPlaceholder(props.placeholder)
     if (props && props.languages) setLanguages(props.languages)
     if (props && props.imgUrl) setImgUrl(props.imgUrl)
