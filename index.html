@@ -48,8 +48,8 @@
         <div id="editor"></div>
     </div>
     <script type="module">
-        import view from './dist/index.js'
-        view(document.getElementById('editor'), res => {
+        import { editorView } from './dist/index.js'
+        editorView(document.getElementById('editor'), res => {
             console.log(res)
         }, url => {
             console.log(url)

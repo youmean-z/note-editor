@@ -13,7 +13,7 @@ import { LanguageFn } from 'highlight.js';
  * @param upload
  * @param props
  */
-declare const _default: (el: HTMLElement, store: (res: object) => void, goUrl: (url: string) => void, upload: (file: File) => Promise<string>, props?: {
+declare const editorView: (el: HTMLElement, store: (res: object) => void, goUrl: (url: string) => void, upload: (file: File) => Promise<string>, props?: {
     placeholder?: string;
     imgUrl?: string;
     languages?: {
@@ -23,12 +23,12 @@ declare const _default: (el: HTMLElement, store: (res: object) => void, goUrl: (
     }[];
 }) => EditorView;
 
-export { _default as default };
+export { editorView };
 ```
 
 ### example
 ```js
-view(document.getElementById('editor'), res => { //The first parameter is HTMLElement
+editorView(document.getElementById('editor'), res => { //The first parameter is HTMLElement
     console.log(res) //Click mod+s to trigger, res is the entire content object
 }, url => {
     console.log(url) //Click on tag a to trigger, url is the link address
